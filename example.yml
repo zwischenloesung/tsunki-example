@@ -1,0 +1,13 @@
+# This file is part of a knowledge base. It is used purely as an example
+# to explain how it might be used.
+---
+id: "urn:uuid:1b966c20-526a-4d88-853b-c0e5f7c50ec3"
+
+targets: # always empty for entities
+
+property:
+  name:
+    en: "Example Tsunki-Thing"
+  description:
+    short: # inherited from upper class
+      en: "This is just an example tsunki-thing."
