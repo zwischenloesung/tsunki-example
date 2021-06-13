@@ -32,7 +32,7 @@ alias: # <array> of <string>
 # the value of the filename without .yml. It is also used to indicate
 # alternative places where this tsunki-thing can be found (e.g. external
 # sources)
-urls: #
+urls: # <array> of <string>
 
 # An open map of relations to other tsunki-things. This is the entry point
 # to generate views and actions from.
@@ -64,7 +64,9 @@ property: # <object>
     en: "Example Tsunki-Thing"
     # context based references, see below for details on '_references'
     _references: # <array> of <string> # URIs
-      - &ref000 "https://example.com/en/name"
+      - &ref000
+        name: "The Example Name"
+        uri: "https://example.com/en/name"
     # a description of this very thing
     description:
       short:
@@ -80,27 +82,32 @@ property: # <object>
 # the type of this thing used by parsers to verify its compatibility and
 # to choose the yaml-schema.
 # It will be translated to
-# "https://gitlab.com/zwischenspace/tsunki/tsunki/-/raw/master/schema/tsunki_schema-0.1.yml?inline=false"
+# "https://gitlab.com/zwischenloesung/tsunki/-/raw/master/schema/tsunki_thing_schema-0.1.yml?inline=false"
 _type:
   name: "tsunki"
   version: "0.1"
 
 # the version of this document, if not specified (null or empty string), this
 # is automatically set to # the repo version per default (if available)
-_version:
+_version: # <string>
 
 # tsunki-contexts as URLs of other sources this tsunki-thing depends on,
 # tsunki-things in repositories mentioned here can be referenced 'locally'
 # (relative to the project-root
 _dependencies: # <array> of <string> # URLs
 
-# this can be specified for any part of the tree, at any depth needed, just use the '_authors'/'_references' keywords
-_authors: # <array> to provide some information about who edited the content
+# Provide some information about who edited the content.
+# This can be specified for any part of the tree, at any depth needed,
+# just use the '_authors'/'_references' keywords
+_authors: # <array> of <object> of <string>(key), <string>(value) pairs
   - name: "Michael Lustenberger"
     uri: "mailto:mic@inofix.ch"
 
 # Notes where the infos here come from, and where to find further details.
+# This can be specified for any part of the tree, at any depth needed,
+# just use the '_authors'/'_references' keywords
 _references:
-  - "https://example.com/about"
+  - name: "The Example Web-Site"
+    uri: "https://example.com/about"
   - *ref000
 
