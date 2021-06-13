@@ -45,6 +45,7 @@ relation:
   is: # <array> of <string> # URL or relative path to an abstract tsunki-thing
       # optionally a priority penalty as integer can be added to the string by
       # using a space as delimiter
+    - "example"
   # flat relation of tsunki-things this thing relies on (it's resources)
   has: # <array> of <string> # URL or relative path to a tsunki-thing
   # a loose (flat) connection to other tsunki-things
@@ -61,21 +62,20 @@ modules: # <array> of <object> of <string>(key), <string>(value) pairs
 # inherit these properties.
 property: # <object>
   name:
-    en: "Example Tsunki-Thing"
+    en: "Extensive Version of an Example Tsunki-Thing"
     # context based references, see below for details on '_references'
     _references: # <array> of <string> # URIs
       - &ref000
-        name: "The Example Name"
+        name: "The Example English Name"
         uri: "https://example.com/en/name"
-    # a description of this very thing
-    description:
-      short:
-        en: "This is just an example tsunki-thing."
-      long:
-        en: |
-          This is an example of a meta data document of a knowledge base
-          that was build with YAML files. In particular, this lines show
-          how to add a longer description for a certain language.
+  # a description of this very thing
+  description:
+    # short: # inherited from upper class
+    long:
+      en: |
+        This is an example of a meta data document of a knowledge base
+        that was build with YAML files. In particular, this lines show
+        how to add a longer description for a certain language.
 
 # yet another meta layer, meta data about the meta data starts with a "_"
 
